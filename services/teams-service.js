@@ -33,7 +33,7 @@ export async function getPlayers() {
         .select(`
             id,
             name,
-            teams:teams (
+            team:teams (
                 id,
                 name
             )
