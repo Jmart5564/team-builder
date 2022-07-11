@@ -5,7 +5,7 @@ export async function getTeamsWithPlayers() {
         .from('teams')
         .select(`
             id,
-            name
+            name,
             players:players(
                 id,
                 teamId:team_id,

@@ -1,6 +1,6 @@
 import { getUser, signOut } from './services/auth-service.js';
-import { getTeamsWithPlayers } from './services/teams-service.js';
-import { protectPage } from './utils.js';
+import { addPlayer, getTeamsWithPlayers, removePlayer } from './services/teams-service.js';
+import { protectPage, findById } from './utils.js';
 import createUser from './components/User.js';
 import createTeams from './components/Teams.js';
 
@@ -23,7 +23,27 @@ async function handleSignOut() {
 }
 
 async function handleAddPlayer(playerName, teamId) {
-    
+    const player = await addPlayer(playerName, teamId);
+    teamId.players.push(player);
+
+    display();
+}
+
+async function handleRemovePlayer(player) {
+    const message = `Remove Player?`;
+    if (!confirm(message)) return;
+
+    await removePlayer(player.id);
+
+    const team = findById(teams, player.teamId);
+
+    const index = team.players.indexOf(player);
+
+    if (index !== -1) {
+        team.players.splice(index, 1);
+    }
+
+    display();
 }
 
 // Components 
@@ -32,7 +52,7 @@ const User = createUser(
     { handleSignOut }
 );
 
-const Teams = createTeams(document.querySelector('#teams'), { handleAddPlayer, handleRemovePlayer },);
+const Teams = createTeams(document.querySelector('#teams'), { handleAddPlayer, handleRemovePlayer });
 
 function display() {
     User({ user });
