@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href="../assets/bunny-icon.png" />
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/players.css" />
+    <title>Players</title>
+</head>
+
+<body>
+    <header>
+        <h1>Players</h1>
+        <nav>
+            <a href="../">Teams</a>
+            <a href="." class="current">Players</a>
+        </nav>
+        <div id="user"></div>
+    </header>
+
+    <main>
+        <form id="add-player" class="add-player box">
+            <h2 class="heading">Add a Player</h2>
+            <label>
+                <span>Name</span>
+                <input name="name" placeholder="player name" required>
+            </label>
+
+            <label>
+                <span>Team</span>
+                <select name="teamId" required></select>
+            </label>
+
+            <button>⊕ Add</button>
+        </form>
+
+        <table class="player-table box">
+            <thead class="heading">
+                <tr>
+                    <td>name</td>
+                    <td>team</td>
+                    <!-- <td>added</td> -->
+                </tr>
+            </thead>
+            <tbody id="players"></tbody>
+        </table>
+    </main>
+
+    <footer>&copy;2022 Aspiring Software Developer</footer>
+
+    <script type="module" src="players.js"></script>
+</body>
+
+</html>
