@@ -65,6 +65,22 @@ function AddForm({ team, handleAddPlayer }) {
     form.classList.add('add-player');
 
     const input = document.createElement('input');
-    
+    input.required = true;
+    input.title = `Add a new player to ${team.name}`;
+    input.placeholder = 'new player...';
+
+    const button = document.createElement('button');
+    button.textContent = '⊕';
+
+    form.append(input, button);
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await handleAddPlayer(input.value, team.id);
+        form.reset();
+        input.blur();
+    });
+
+    return form;
 }
 
