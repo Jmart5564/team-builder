@@ -49,7 +49,7 @@ function Player({ player, handleRemovePlayer }) {
 
     const button = document.createElement('button');
     button.classList.add('delete');
-    button.textContent = 'ⓧ';
+    button.textContent = 'X';
 
     button.addEventListener('click', () => {
         handleRemovePlayer(player);
@@ -70,7 +70,7 @@ function AddForm({ team, handleAddPlayer }) {
     input.placeholder = 'new player...';
 
     const button = document.createElement('button');
-    button.textContent = '⊕';
+    button.textContent = '+';
 
     form.append(input, button);
 
