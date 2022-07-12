@@ -4,15 +4,16 @@ main {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-start;
     gap: 20px;
     background-color: rgb(44, 42, 42);
-    background-repeat: repeat-y;
+    background-repeat: repeat;
 }
 
-header {
-
+body  {
+    background-color: rgb(44, 42, 42);
+    background-repeat: repeat;
 }
 
 .box {
@@ -20,6 +21,12 @@ header {
     border: 1px solid rgb(85, 13, 153);
     color: white;
 }
+
+h2.heading {
+    display: flex;
+    justify-content: center;
+}
+
 
 tr:nth-child(even) {
     background: rgb(104, 15, 177);
@@ -30,4 +37,8 @@ thead, .heading {
     color: white;
     font-family: 'Rubik';
     font-weight: normal;
+}
+
+td {
+    text-align: center;
 }
