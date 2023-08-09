@@ -1,0 +1,70 @@
+body {
+    background-color: black;
+}
+
+header {
+    background-color: gray;
+    height: 60px;
+}
+
+#teams {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    margin-bottom: 20px;
+}
+
+.team {
+    background: rgb(112, 72, 121);
+    border: 1px solid rgb(10, 3, 10);
+    padding: 15px;
+    min-height: 100px;
+    display: grid;
+    grid-template-rows: auto 1fr 40px;
+    gap: 10px;
+}
+
+.team h2 {
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    align-items:center;
+    justify-self: center;
+    color: rgb(6, 5, 8);
+    border-bottom: 2px solid black;
+    font-size: 1.5em;
+    font-family: cursive;
+}
+
+.players {
+    align-self: start;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.add-player {
+    display: flex;
+    justify-self: center;
+    height: 25px;
+}
+
+.player {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.delete {
+    height: 20px;
+    color: rgb(10, 4, 12);
+    background-color: rgb(65, 58, 110);
+    border-radius: 25%;
+}
+
+.delete:hover {
+    background-color: white;
+    cursor: pointer;
+}
+

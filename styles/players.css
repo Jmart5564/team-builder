@@ -1,0 +1,44 @@
+
+main {
+    padding: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: rgb(44, 42, 42);
+    background-repeat: repeat;
+}
+
+body  {
+    background-color: rgb(44, 42, 42);
+    background-repeat: repeat;
+}
+
+.box {
+    background: rgb(7, 1, 1);
+    border: 1px solid rgb(85, 13, 153);
+    color: white;
+}
+
+h2.heading {
+    display: flex;
+    justify-content: center;
+}
+
+
+tr:nth-child(even) {
+    background: rgb(104, 15, 177);
+}
+
+thead, .heading {
+    background: rgb(52, 3, 92);
+    color: white;
+    font-family: 'Rubik';
+    font-weight: normal;
+}
+
+td {
+    text-align: center;
+}
